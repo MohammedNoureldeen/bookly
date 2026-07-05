@@ -1,13 +1,7 @@
-const app = require("./app")
-const dotenv = require("dotenv")
+const app = require("./app.js")
+const config = require("./config/index.js")
 
-
-
-dotenv.config()
-
-const PORT = process.env.PORT || 3000
-console.log(process.env.PORT, process.env.NODE_ENV)
-
-const srver = app.listen(PORT, () => {
-    console.log(`Server is runing on port ${PORT}`)
+console.log(config.port, config.env)
+const srver = app.listen(config.port, () => {
+    console.log(`Server is runing on port ${config.PORT}`)
 })
